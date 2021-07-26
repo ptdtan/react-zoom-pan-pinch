@@ -1,0 +1,102 @@
+@each $key, $value in $colors {
+  @each $direction in $directionArr {
+    .border-#{$direction}-#{$key} {
+      border-#{$direction}: 1px solid $value;
+    }
+  }
+
+  .bg-#{$key} {
+    background-color: $value;
+  }
+
+  .color-#{$key} {
+    color: $value;
+  }
+  
+  .border-#{$key} {
+    border: 1px solid $value;
+  }
+}
+
+@each $key, $value in $marginPadding {
+  @each $size in $spacing {
+    .#{$key}-#{$size} {
+      #{$value}: unquote($size + 'px') !important;
+    }
+    .#{$key}t-#{$size} {
+      #{$value}-top: unquote($size + 'px') !important;
+    }
+    .#{$key}b-#{$size} {
+      #{$value}-bottom: unquote($size + 'px') !important;
+    }
+    .#{$key}l-#{$size} {
+      #{$value}-left: unquote($size + 'px') !important;
+    }
+    .#{$key}r-#{$size} {
+      #{$value}-right: unquote($size + 'px') !important;
+    }
+    .#{$key}x-#{$size} {
+      #{$value}-right: unquote($size + 'px') !important;
+      #{$value}-left: unquote($size + 'px') !important;
+    }
+    .#{$key}y-#{$size} {
+      #{$value}-top: unquote($size + 'px') !important;
+      #{$value}-bottom: unquote($size + 'px') !important;
+    }
+  }
+}
+
+@each $value in $alignItemsArr {
+  .align-items-#{$value} {
+    align-items: $value;
+  }
+}
+
+@each $value in $justifyContentArr {
+  .justify-content-#{$value} {
+    justify-content: $value;
+  }
+}
+
+@each $value in $displayArr {
+  .d-#{$value} {
+    display: $value;
+  }
+}
+
+@each $value in $flexWrapArr {
+  .flex-wrap-#{$value} {
+    flex-wrap: $value;
+  }
+}
+
+@mixin xs {
+  @media (max-width: 575.98px) {
+    @content;
+  }
+}
+@mixin sm {
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    @content;
+  }
+}
+@mixin md {
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    @content;
+  }
+}
+@mixin md-up {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}

@@ -1,0 +1,69 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'utils.scss';
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html:after {
+  display: none;
+  content: "--mobile: (max-width: 719.99px) | --desktop: (min-width: 720px)";
+}
+
+body {
+  margin: 0;
+  font-weight: normal;
+  font-family: 'FWDCircularTT';
+}
+
+picture { 
+  display: "block"; 
+  position: "relative";
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+.img-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.modal--pnz {
+  .MuiContainer-root {
+    // height: 100%;
+    align-items: center;
+    display: flex;
+  }
+  .MuiDialog-paper {
+    min-height: 100vh;
+  }
+  .modal__close-btn {
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+}
+
+.pnz-container {
+  max-width: calc(100vw - 16px);
+  justify-content: center;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .react-transform-component {
+    height: 400px;
+  }
+}
